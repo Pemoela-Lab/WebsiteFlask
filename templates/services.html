@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% block title %}Layanan{% endblock %}
+{% block meta_description %}Layanan teknologi Pemoela Lab — website komersil, profil perusahaan, profil pribadi, aplikasi web, UI/UX, dan maintenance.{% endblock %}
+
+{% block content %}
+
+<section class="pt-40 pb-20 relative overflow-hidden">
+    <div class="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(to_right,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:64px_64px]"></div>
+    <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 text-center">
+        <p class="text-white/40 text-sm uppercase tracking-widest mb-4">Apa yang kami tawarkan</p>
+        <h1 class="font-display text-5xl lg:text-6xl font-bold mb-6">Layanan Kami</h1>
+        <p class="text-white/50 text-xl max-w-2xl mx-auto leading-relaxed">
+            Dari website sederhana hingga aplikasi web kompleks, kami siap membantu mewujudkan visi digital Anda.
+        </p>
+    </div>
+</section>
+
+<section class="py-16 pb-32">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {% for service in services %}
+            <div class="glass-card rounded-2xl p-10 hover-lift">
+                <div class="w-14 h-14 bg-white/10 rounded-xl flex items-center justify-center mb-6">
+                    <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="{{ service.icon }}"/>
+                    </svg>
+                </div>
+                <h3 class="font-display font-semibold text-xl mb-4">{{ service.title }}</h3>
+                <p class="text-white/50 leading-relaxed">{{ service.description }}</p>
+            </div>
+            {% endfor %}
+        </div>
+
+        <div class="glass-card rounded-3xl p-12 lg:p-16 text-center mt-16 relative overflow-hidden">
+            <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(255,255,255,0.04),transparent_70%)]"></div>
+            <div class="relative z-10">
+                <h2 class="font-display text-3xl lg:text-4xl font-bold mb-4">Tidak menemukan yang Anda cari?</h2>
+                <p class="text-white/50 max-w-lg mx-auto mb-8">
+                    Kami terbuka untuk kebutuhan custom. Hubungi kami dan ceritakan apa yang Anda butuhkan.
+                </p>
+                <a href="/kontak" class="inline-flex items-center gap-2 bg-white text-black font-semibold px-8 py-3.5 rounded-full hover:bg-white/90 transition-all">
+                    Diskusi Kebutuhan Anda
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
